@@ -1,0 +1,28 @@
+{
+  "name": "hostel",
+  "version": "1.0.0",
+  "description": "CICD Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-oni/hostel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f-oni/hostel/issues"
+  },
+  "homepage": "https://github.com/f-oni/hostel#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.1.3",
+    "supertest": "^7.1.4"
+  }
+}
