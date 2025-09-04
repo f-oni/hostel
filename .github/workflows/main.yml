@@ -16,7 +16,6 @@ jobs:
       
       - uses: action/checkout@v4
       - name: uses Nod.js ${{ matrix.node-version }}
-        uses: action/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
