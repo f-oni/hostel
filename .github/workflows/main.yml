@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+  
     runs-on: ubuntu-latest
 
     strategy:
@@ -15,7 +16,8 @@ jobs:
     steps:
       
       - uses: action/checkout@v4
-      - uses: uses Nod.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: action/setup-node@v4 
         with:
           node-version: ${{ matrix.node-version }}
 
