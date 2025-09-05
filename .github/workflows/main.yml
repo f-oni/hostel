@@ -25,10 +25,19 @@ jobs:
       - name: Use secret
         run: |
           echo "Access Token: ${{ secrets.ACCESS_TOKEN }}"
-          
+
       - name: Conditional step
         if: github.event_name == 'pull_request' && github.ref == 'refs/heads/main'
         run: echo "This step runs only for pull requests."
+
+      - name: Set Output
+        id: data_generator
+        run: echo "::set-output name=data_gen::$(echo data consumption)"
+
+      - name: Use Output
+        id: data_consumer
+        run: |
+          echo "Received value from previous step: ${{ steps.data_generator.outputs.data_gen }}"
       
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
