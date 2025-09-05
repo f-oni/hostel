@@ -25,6 +25,10 @@ jobs:
       - name: Use secret
         run: |
           echo "Access Token: ${{ secrets.ACCESS_TOKEN }}"
+          
+      - name: Conditional step
+        if: github.event_name == 'pull_request' && github.ref == 'refs/heads/main'
+        run: echo "This step runs only for pull requests."
       
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
