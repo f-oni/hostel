@@ -19,9 +19,12 @@ jobs:
         node-version: ['18.x', '20.x']
 
     steps:
-    
+
       - name: Job environment
         run: echo $BUILD_CONFIGURATION
+      - name: Use secret
+        run: |
+          echo "Access Token: ${{" secrets.ACCESS_TOKEN "}}"
       
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
